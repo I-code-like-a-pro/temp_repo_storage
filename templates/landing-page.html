@@ -2,44 +2,392 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Event Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventManager - Smart Event Planning Platform</title>
     <link rel="stylesheet" href="{{url_for('static', filename='landing_page.css')}}">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header class="header-landing">
-            <div class="header_text">
-                <p style="text-align:center">See how the event manager can solve your biggest problems</p>
-            </div>
-            <div class="header_links">
-                <a href="{{url_for('landing_page')}}">
-                    <span class="header_span"><h1>EventManager</h1></span>
+    <!-- Animated Background -->
+    <div class="gradient-bg">
+        <div class="gradient-circle circle-1"></div>
+        <div class="gradient-circle circle-2"></div>
+        <div class="gradient-circle circle-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="{{url_for('landing_page')}}" class="logo">
+                    <span class="logo-icon">📅</span>
+                    <span class="logo-text">EventManager</span>
                 </a>
 
-               <nav class="header-navbar">
+                <div class="nav-menu" id="navMenu">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <a href="#about" class="nav-link">About</a>
+                </div>
 
-                    <a href="{{ url_for('login') }}">Login</a>
-                    <a href="{{ url_for('register') }}" class="register-btn">Register</a>
-                </nav>
+                <div class="nav-buttons">
+                    <a href="{{ url_for('login') }}" class="btn btn-outline">Log in</a>
+                    <a href="{{ url_for('register') }}" class="btn btn-primary">Get Started</a>
+                </div>
 
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-        </header>
-<div class="landing_writeup">
-    <h3>Event management software</h3>
-    <p>A smart event planner tech platform, <br>powered by Group 9</p>
+        </nav>
+    </header>
 
-    <p>
-        Are you using manual processes to plan and execute great events?
-        Ditch the busy work. With Cvent you'll have the power to automate tasks
-        and simplify the entire planning process so you can focus on what matters most:
-        your attendees.
-    </p>
-
-    <a href="{{ url_for('register') }}" class="button-primary">Get Started</a>
-</div>
-
-
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#features" class="mobile-link">Features</a>
+        <a href="#how-it-works" class="mobile-link">How It Works</a>
+        <a href="#pricing" class="mobile-link">Pricing</a>
+        <a href="#about" class="mobile-link">About</a>
+        <hr class="mobile-divider">
+        <a href="{{ url_for('login') }}" class="mobile-link">Log in</a>
+        <a href="{{ url_for('register') }}" class="mobile-link mobile-link-primary">Get Started</a>
     </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-pulse"></span>
+                    Powered by Group 9
+                </div>
+                
+                <h1 class="hero-title">
+                    Smart Event Management
+                    <span class="gradient-text">Software</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Ditch the manual processes and automate your entire event planning workflow. 
+                    From attendee management to event sharing - we've got you covered.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10k+</div>
+                        <div class="stat-label">Events Created</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50k+</div>
+                        <div class="stat-label">Happy Attendees</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">User Rating</div>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="{{ url_for('register') }}" class="btn btn-primary btn-large">
+                        Start Free Trial
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#demo" class="btn btn-outline btn-large">
+                        <i class="fas fa-play"></i>
+                        Watch Demo
+                    </a>
+                </div>
+
+                <div class="hero-trustpilot">
+                    <div class="trustpilot-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span>Trusted by 500+ event planners</span>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="hero-image-container">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                         alt="Event Management Dashboard" 
+                         class="hero-img">
+                    <div class="hero-image-overlay"></div>
+                </div>
+                
+                <!-- Floating Cards -->
+                <div class="floating-card card-1">
+                    <i class="fas fa-users"></i>
+                    <span>234 Attendees</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>12 Events</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Shared</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">FEATURES</span>
+                <h2 class="section-title">Everything you need to manage events</h2>
+                <p class="section-subtitle">Powerful tools that simplify event planning and attendee management</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">View Attendees</h3>
+                    <p class="feature-description">Easily track and manage your attendees list with real-time updates and detailed insights.</p>
+                    <a href="#" class="feature-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-calendar-plus"></i>
+                    </div>
+                    <h3 class="feature-title">Create Events</h3>
+                    <p class="feature-description">Create beautiful event pages in minutes with our intuitive event builder.</p>
+                    <a href="#" class="feature-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Delete Events</h3>
+                    <p class="feature-description">Full control over your events with easy deletion and archiving options.</p>
+                    <a href="#" class="feature-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Share Events</h3>
+                    <p class="feature-description">Share your events instantly via email, social media, or direct links.</p>
+                    <a href="#" class="feature-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3 class="feature-title">Create Users</h3>
+                    <p class="feature-description">Easy user registration and profile management for your team members.</p>
+                    <a href="#" class="feature-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="feature-title">Password Recovery</h3>
+                    <p class="feature-description">Secure password recovery system to ensure you never lose access.</p>
+                    <a href="#" class="feature-link">
+                        Learn more <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">HOW IT WORKS</span>
+                <h2 class="section-title">Get started in 3 simple steps</h2>
+                <p class="section-subtitle">From signup to your first event in minutes</p>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3 class="step-title">Create Account</h3>
+                    <p class="step-description">Sign up for free and set up your profile in seconds</p>
+                </div>
+
+                <div class="step-connector"></div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-plus"></i>
+                    </div>
+                    <h3 class="step-title">Create Event</h3>
+                    <p class="step-description">Add event details, date, time, and customize your page</p>
+                </div>
+
+                <div class="step-connector"></div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="step-title">Manage & Share</h3>
+                    <p class="step-description">Invite attendees and manage everything from one dashboard</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to simplify your event planning?</h2>
+                <p class="cta-description">Join thousands of event planners who trust EventManager</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('register') }}" class="btn btn-primary btn-large">
+                        Get Started Free
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline btn-large">
+                        Contact Sales
+                    </a>
+                </div>
+                <p class="cta-note">No credit card required • 14-day free trial</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-icon">📅</span>
+                        <span>EventManager</span>
+                    </div>
+                    <p class="footer-description">Smart event planning platform powered by Group 9</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Integrations</a>
+                        <a href="#">Demo</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Contact</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Documentation</a>
+                        <a href="#">API</a>
+                        <a href="#">Status</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Security</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 EventManager. All rights reserved. Powered by Group 9</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.className = 'fas fa-times';
+            } else {
+                icon.className = 'fas fa-bars';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
